@@ -7,6 +7,7 @@ import { HeroView } from "@UI/templates/posts/HeroView/HeroView";
 import { Grid } from "@UI/atoms/Grid/Grid";
 import { Box } from "@UI/atoms/Box/Box";
 import { ImageView } from "@UI/templates/posts/ImageView/ImageView";
+import { PostsNotFound } from "@UI/templates/textBlocks/PostsNotFound";
 
 export const HomePage = () => {
   const { getPosts } = usePostStore();
@@ -14,17 +15,23 @@ export const HomePage = () => {
 
   return (
     <PageView>
-      {posts[0] && <HeroView post={posts[0]} />}
+      {posts.length > 0 && (
+        <>
+          {posts[0] && <HeroView post={posts[0]} />}
 
-      <Grid>
-        <Box>
-          {posts[1] && <VideoView post={posts[1]} />}
-        </Box>
-        <Box>
-          {posts[2] && <ImageView post={posts[2]} />}
-          <ThumbnailView posts={posts} />
-        </Box>
-      </Grid>
+          <Grid>
+            <Box>
+              {posts[1] && <VideoView post={posts[1]} />}
+            </Box>
+            <Box>
+              {posts[2] && <ImageView post={posts[2]} />}
+              <ThumbnailView posts={posts} />
+            </Box>
+          </Grid>
+        </>
+      )}
+
+      {!posts.length && <PostsNotFound />}
     </PageView>
   );
 };

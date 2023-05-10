@@ -9,4 +9,3 @@ export const StyledWrapper = styled(Box)
     background: white;
     border-radius: 10px;
   `;
-  
