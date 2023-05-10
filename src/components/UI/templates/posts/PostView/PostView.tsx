@@ -17,7 +17,7 @@ interface PostViewPropsType {
 }
 
 export const PostView = ({ post }: PostViewPropsType) => {
-  const { from, goTo } = useRoutes();
+  const { goTo } = useRoutes();
   const { removePost } = usePostStore();
 
   return (
@@ -44,7 +44,7 @@ export const PostView = ({ post }: PostViewPropsType) => {
             <Button onClick={() => goTo(`/post/edit/${post.id}`)}>Edit <EditIcon /></Button>
             <Button onClick={() => {
               removePost(post.id);
-              goTo(from);
+              goTo('/blog');
             }}>Delete <DeleteIcon /></Button>
           </ButtonGroup>
         </StyledBox>
