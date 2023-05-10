@@ -6,9 +6,9 @@ import Button from '@UI/atoms/Button/Button';
 import { Divider } from '@UI/atoms/Divider/Divider';
 import { formatDate } from '@utils/formatDate';
 import { useRoutes } from '@utils/useRoutes.hook';
-import { ButtonGroup } from 'react-bootstrap';
 import { StyledBox, StyledPostWrapper } from './CompactView.styles';
 import { ChevronRightIcon } from '@UI/atoms/Icons/ChevronRightIcon';
+import { ButtonGroup } from '@UI/atoms/ButtonGroup/ButtonGroup';
 
 interface CompactViewPropsType {
   post: PostType;
