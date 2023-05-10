@@ -10,9 +10,9 @@ export interface NavLinkPropsType {
 
 export const NavLink = ({ title, href }: NavLinkPropsType) => {
   const { pathname } = useLocation(); 
-console.log(pathname, href, pathname.includes(href))
+
   return (
-    <StyledNavLinkContainer active={pathname.includes(href)}>
+    <StyledNavLinkContainer active={pathname === href}>
       <StyledNavLink to={href}>
         <Typography variant='label'>{title}</Typography>
       </StyledNavLink>

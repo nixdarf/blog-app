@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { Box } from '../../atoms/Box/Box';
 
 export const StyledNavLinkContainer = styled(Box)
-  .attrs(p => ({ margin: `${p.theme.spacing.xs} ${p.theme.spacing.sm}`}))<{ active: boolean; }>`
-    color: ${p => p.active ? p.theme.colors.primary : 'inherit'};
+  .attrs(p => ({ margin: `${p.theme.spacing.xs} ${p.theme.spacing.sm}` })) <{ active: boolean; }>`
+    a {
+      color: ${p => p.active ? p.theme.colors.primary : 'inherit'};
+    }
   `;
 
 export const StyledNavLink = styled(Link)`
