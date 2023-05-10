@@ -1,0 +1,1 @@
+export const youtubeVideoGenerator = (): string => 'https://www.youtube.com/embed/RC-DVlIJBPg'
